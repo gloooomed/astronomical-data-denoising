@@ -1,11 +1,5 @@
-# Data files - too large for Git
-data/patches/
-data/raw/
-*.npy
-*.parquet
-
-# Keep manifest files but ignore large data
-!data/manifests/
+# Data files - entire data folder should not be tracked
+data/
 
 # Python
 __pycache__/
