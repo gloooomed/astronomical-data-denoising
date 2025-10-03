@@ -1,5 +1,6 @@
 # Data files - entire data folder should not be tracked
 data/
+reports/
 
 # Python
 __pycache__/

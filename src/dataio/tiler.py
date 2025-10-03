@@ -135,7 +135,7 @@ def main():
                 # Save patch
                 patch_fn = f"{parent_id}_y{y}_x{x}.npy"
                 patch_path = args.outdir / patch_fn
-                np.save(patch_path, patch.astype(np.float32), allow_pickle=False)
+                np.save(patch_path, patch.astype(np.float16), allow_pickle=False)
 
                 rows.append({
                     "tile_id": f"{parent_id}_{y}_{x}",
