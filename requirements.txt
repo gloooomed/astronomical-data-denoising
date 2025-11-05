@@ -16,3 +16,9 @@ seaborn>=0.11.0
 photutils>=1.5.0
 astropy>=5.0.0
 scipy>=1.7.0
+
+# Image Processing (for realistic noise generation)
+opencv-python>=4.5.0
+
+# GUI Visualization
+tkinter  # Usually comes with Python
