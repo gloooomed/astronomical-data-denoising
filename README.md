@@ -57,6 +57,24 @@ astronomical-data-denoising/
 ├── requirements.txt              # Python dependencies
 └── README.md
 ```
+### Masked Loss Function
+
+The masked loss ensures that only valid (unmasked) elements contribute to the total loss during training.
+
+$$
+\mathcal{L}_{\text{masked}} = \frac{\sum_{i=1}^{N} M_i \, (y_i - \hat{y}_i)^2}{\sum_{i=1}^{N} M_i}
+$$
+
+Where:
+- yᵢ = Ground truth (target) value  
+- ŷᵢ = Predicted value  
+- Mᵢ = Mask indicator (1 for valid entries, 0 for ignored ones)  
+- N = Total number of elements  
+
+This formula represents the mean squared error (MSE) computed only over elements where the mask Mᵢ = 1.  
+It’s commonly used when parts of the data are missing, padded, or irrelevant and should not influence the loss.
+
+
 
 ## Installation
 
@@ -163,7 +181,3 @@ Noise2Void enables self-supervised denoising without clean reference images. Dur
   year={2019}
 }
 ```
-
-## License
-
-MIT License
